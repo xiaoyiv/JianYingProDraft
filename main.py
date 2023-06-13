@@ -2,19 +2,12 @@ import os
 from util import *
 import time
 import template
-import librosa
 
-def get_beat(file):
-    y, sr = librosa.load(file)
-    bpm, beat = librosa.beat.beat_track(y=y, sr=sr)
-    beats = list(librosa.frames_to_time(beat, sr=sr))
-    beats.pop(0)
-    return beats
 
 class Draft:
 
     drafts_folder = "D:/JianyingPro Drafts"
-    template_folder = "./template/"
+    template_folder = "./template json/"
     content_file = "draft_content.json"
     meta_info_file = "draft_meta_info.json"
 
@@ -198,15 +191,21 @@ class DraftMaterial:
         video["width"]=  self.width
         return (canvase,speed,sound_channel_mapping,video)
 
-    def audio_material(self):
+    def audio_material(self,open_beat=False):
         """
             return (beat,speed,sound_channel_mapping,audio)
         """
         speed = template.speed()
         sound_channel_mapping = template.sound_channel_mapping()
         beat = template.beat()
-        bt = list(map(lambda x: int(round(x, 3)* 10**6), get_beat(self.file_Path)))
-        beat['user_beats'] = bt
+        if open_beat:
+            import librosa
+            y, sr = librosa.load(self.file_Path)
+            bpm, beats = librosa.beat.beat_track(y=y, sr=sr)
+            beats = list(librosa.frames_to_time(beats, sr=sr))
+            beats.pop(0)
+            beats = list(map(lambda x: int(round(x, 3)* 10**6), beats))
+            beat['user_beats'] = beats
         audio = template.audio()
         audio["duration"]= self.duration
         audio["local_material_id"]= self.id        
@@ -268,8 +267,9 @@ class DraftTracks:
 
 if __name__ == "__main__":
     draft = Draft("测试草稿")
-    # draft.add_media_to_track('D:/Videos/剪印导出/测试1(1).mp4')
-    draft.add_media_to_track("D:/Music/Krubb Wenkroist - Bleach.mp3")
+    audio = DraftMaterial("D:/Music/Krubb Wenkroist - Bleach.mp3")
+    draft.add_media_to_track(audio)
+    draft.add_media_to_track('D:/Videos/剪印导出/测试1(1).mp4')
     draft.save()
 
 
