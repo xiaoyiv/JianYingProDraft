@@ -165,3 +165,52 @@ def segment():
           "visible": True,
           "volume": 1.0
         }
+
+def beat():
+    return {
+        "ai_beats": {
+          "beats_path": "",
+          "beats_url": "",
+          "melody_path": "",
+          "melody_percents": [0.0],
+          "melody_url": ""
+        },
+        "enable_ai_beats": False,
+        "gear": 404,
+        "id": util.generate_id(),
+        "mode": 404,
+        "type": "beats",
+        "user_beats": [],
+        "user_delete_ai_beats": None
+      }
+
+def audio():
+    return {
+        "app_id": 0,
+        "category_id": "",
+        "category_name": "local",
+        "check_flag": 1,
+        "duration": 0,
+        "effect_id": "",
+        "formula_id": "",
+        "id": util.generate_id(),
+        "intensifies_path": "",
+        "local_material_id": "",
+        "music_id": util.generate_id(),
+        "name": "Krubb Wenkroist - Bleach.mp3",
+        "path": "D:/Music/Krubb Wenkroist - Bleach.mp3",
+        "request_id": "",
+        "resource_id": "",
+        "source_platform": 0,
+        "team_id": "",
+        "text_id": "",
+        "tone_category_id": "",
+        "tone_category_name": "",
+        "tone_effect_id": "",
+        "tone_effect_name": "",
+        "tone_speaker": "",
+        "tone_type": "",
+        "type": "extract_music",
+        "video_id": "",
+        "wave_points": []
+      }
