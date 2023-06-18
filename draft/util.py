@@ -2,7 +2,6 @@ import os
 import shutil
 import uuid
 import json
-from pymediainfo import MediaInfo
 
 def generate_id():
     """

@@ -20,7 +20,7 @@ def sound_channel_mapping():
         "audio_channel_mapping": 0,
         "id":  util.generate_id(),
         "is_config_open": False,
-        "type": ""
+        "type": "none"
     }
 
 def speed():
@@ -58,7 +58,7 @@ def video():
             "gameplay": None,
             "has_audio": True,
             "height": 0,
-            "id": "",
+            "id": util.generate_id(),
             "intensifies_audio_path": "",
             "intensifies_path": "",
             "is_unified_beauty_mode": False,
@@ -214,3 +214,87 @@ def audio():
         "video_id": "",
         "wave_points": []
       }
+
+def text():
+    return {
+        "add_type": 0,
+        "alignment": 1,
+        "background_alpha": 1.0,
+        "background_color": "",
+        "background_height": 1.0,
+        "background_horizontal_offset": 0.0,
+        "background_round_radius": 0.0,
+        "background_style": 0,
+        "background_vertical_offset": 0.0,
+        "background_width": 1.0,
+        "bold_width": 0.0,
+        "border_color": "",
+        "border_width": 0.08,
+        "check_flag": 7,
+        "content": "<font id=\"\" path=\"E:/JianyingPro/4.2.0.10100/Resources/Font/SystemFont/zh-hans.ttf\"><color=(1.000000, 1.000000, 1.000000, 1.000000)><size=15.000000>[默认文本]</size></color></font>",
+        "font_category_id": "",
+        "font_category_name": "",
+        "font_id": "",
+        "font_name": "",
+        "font_path": "E:/JianyingPro/4.2.0.10100/Resources/Font/SystemFont/zh-hans.ttf",
+        "font_resource_id": "",
+        "font_size": 15.0,
+        "font_source_platform": 0,
+        "font_team_id": "",
+        "font_title": "none",
+        "font_url": "",
+        "fonts": [],
+        "force_apply_line_max_width": False,
+        "global_alpha": 1.0,
+        "group_id": "",
+        "has_shadow": False,
+        "id": util.generate_id(),
+        "initial_scale": 1.0,
+        "is_rich_text": False,
+        "italic_degree": 0,
+        "ktv_color": "",
+        "language": "",
+        "layer_weight": 1,
+        "letter_spacing": 0.0,
+        "line_spacing": 0.02,
+        "name": "",
+        "preset_category": "",
+        "preset_category_id": "",
+        "preset_has_set_alignment": False,
+        "preset_id": "",
+        "preset_index": 0,
+        "preset_name": "",
+        "recognize_type": 0,
+        "relevance_segment": [],
+        "shadow_alpha": 0.8,
+        "shadow_angle": -45.0,
+        "shadow_color": "",
+        "shadow_distance": 8.0,
+        "shadow_point": { "x": 1.0182337649086284, "y": -1.0182337649086284 },
+        "shadow_smoothing": 1.0,
+        "shape_clip_x": False,
+        "shape_clip_y": False,
+        "style_name": "",
+        "sub_type": 0,
+        "text_alpha": 1.0,
+        "text_color": "#FFFFFF",
+        "text_preset_resource_id": "",
+        "text_size": 30,
+        "text_to_audio_ids": [],
+        "tts_auto_update": False,
+        "type": "text",
+        "typesetting": 0,
+        "underline": False,
+        "underline_offset": 0.22,
+        "underline_width": 0.05,
+        "use_effect_default_color": True,
+        "words": []
+      }
+
+def material_animation():
+    return {
+        "animations": [],
+        "id": util.generate_id(),
+        "type": "sticker_animation"
+    }
+
